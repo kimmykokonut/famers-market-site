@@ -7,9 +7,15 @@ function App() {
     <>
       <Header />
       <hr />
-      <MarketControl />
-      <hr />
-      <Produce />
+      <tr>
+        <td>
+          <MarketControl />
+        </td>
+        <hr />
+        <td>
+          <Produce />
+        </td>
+      </tr>
     </>
   )
 }
