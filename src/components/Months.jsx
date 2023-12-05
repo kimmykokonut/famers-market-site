@@ -7,7 +7,6 @@ function Months(props) {
     );
     return (
         <>
-            <h3>Produce Available</h3>
             <h3>{props.month}</h3>
             <ul>{listItems}</ul>
         </>

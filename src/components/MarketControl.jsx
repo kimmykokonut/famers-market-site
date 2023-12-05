@@ -1,6 +1,4 @@
 import React from 'react';
-//import MarketSchedule from './MarketSchedule';
-// import Button from './Button';
 import Day from './Day';
 
 const marketSchedule = [
