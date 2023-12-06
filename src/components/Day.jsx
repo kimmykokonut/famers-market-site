@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 function Day(props) {
     return (
         <>
-            <h3>Day: {props.day}</h3>
-            <h3>Location: {props.location}</h3>
-            <h3>Hours: {props.hours}</h3>
-            <h3>Booth: {props.booth}</h3>
+            <h5>Day: {props.day}</h5>
+            <h5>Location: {props.location}</h5>
+            <h5>Hours: {props.hours}</h5>
+            <h5>Booth: {props.booth}</h5>
         </>
     )
 }

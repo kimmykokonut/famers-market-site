@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 
 function Months(props) {
     const selection = props.selection;
-    const listItems = selection.map((items) =>
-        <li>{items}</li>
+    const listItems = selection.map((items, index) =>
+        <li key={index}>{items}</li>
     );
     return (
         <>
@@ -19,3 +19,4 @@ Months.propTypes = {
 }
 
 export default Months;
+

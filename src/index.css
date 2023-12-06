@@ -1,0 +1,23 @@
+#body {
+  padding: 5%;
+}
+
+#body #marketControl {
+  margin: 2.5%;
+}
+
+#produceDisplay {
+  margin: 2.5%;
+}
+
+#marketMonths {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 3px;
+}
+
+#produceInfo {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 3px;
+}

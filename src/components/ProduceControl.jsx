@@ -280,30 +280,29 @@ class Produce extends React.Component {
     }
 
     handleClick = () => {
-        this.setState(prevState => ({
-            monthCounter: prevState.monthCounter + 1
-        }));
+        if (this.state.monthCounter > 10) {
+            this.setState({ monthCounter: 0 });
+        } else {
+            this.setState(prevState => ({
+                monthCounter: prevState.monthCounter + 1
+            }));
+        }
     }
     render() {
-        let visibleMonth = null;
+        let visibleMonth = availableProduce[this.state.monthCounter]
 
-        if (this.state.monthCounter < 12) {
-            visibleMonth = availableProduce[this.state.monthCounter];
-        } else {
-            this.setState({ monthCounter: 0 });
-            visibleMonth = availableProduce[this.state.monthCounter];
-        }
         return (
             <>
-                <h3>Produce available by Month</h3>
-                <Months
-                    month={visibleMonth.month}
-                    selection={visibleMonth.selection}
-                    key={this.state.monthCounter} />
-                <button onClick={this.handleClick}>Next Month</button>
+                <div id="produceInfo">
+                    <h3>Produce available by Month</h3>
+                    <button className="btn btn-danger" onClick={this.handleClick}>Next Month</button>
+                    <Months
+                        month={visibleMonth.month}
+                        selection={visibleMonth.selection}
+                        key={this.state.monthCounter} />
+                </div>
             </>
         )
     }
 }
-
 export default Produce;

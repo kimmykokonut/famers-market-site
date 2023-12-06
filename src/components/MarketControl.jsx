@@ -50,38 +50,33 @@ class MarketControl extends React.Component {
     }
 
     handleClick = () => {
-        this.setState(prevState => ({
-            dayCounter: prevState.dayCounter + 1
-        }));
+        if (this.state.dayCounter > 4) {
+            this.setState({ dayCounter: 0 });
+        } else {
+            this.setState(prevState => ({
+                dayCounter: prevState.dayCounter + 1
+            }));
+        }
     }
 
     render() {
-        let visibleDay = null;
+        let visibleDay = marketSchedule[this.state.dayCounter]
 
-        if (this.state.dayCounter < 6) {
-            visibleDay = marketSchedule[this.state.dayCounter];
-            console.log(this.state.dayCounter);
-        } else {
-            console.log("you re in else");
-            this.setState({ dayCounter: 0 });
-            console.log(this.state.dayCounter);
-            visibleDay = marketSchedule[this.state.dayCounter];
-        }
         return (
             <>
-                <h3>Market Info</h3>
-                <Day
-                    day={visibleDay.day}
-                    location={visibleDay.location}
-                    hours={visibleDay.hours}
-                    booth={visibleDay.booth}
-                    key={this.state.dayCounter} />
-
-                <button onClick={this.handleClick}>Change Day</button>
+                <div id="marketMonths" className='text-center'>
+                    <h3>Market Info</h3>
+                    <button className="btn btn-success" onClick={this.handleClick}>Change Day</button>
+                    <Day
+                        day={visibleDay.day}
+                        location={visibleDay.location}
+                        hours={visibleDay.hours}
+                        booth={visibleDay.booth}
+                        key={this.state.dayCounter} />
+                </div>
             </>
         )
     }
 
 }
-
 export default MarketControl;
